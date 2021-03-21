@@ -2,11 +2,28 @@
 
 linux环境中的visualGC，jstat离线日志的图形工具linux下的jstat日志可视化工具
 
+## 版本
+
+v0.0.1
+
 ## gcisual使用方法
 
 ### 环境要求
 
 linux bash
+
+### 安装脚本
+
+执行如下命令：
+```
+cd gcisual
+ln -sf `pwd`/main.sh /usr/bin/gcisual
+```
+
+执行如下命令，返回”参数解释“即表示安装成功：
+```
+gcisual
+```
 
 ### 参数解释
 
@@ -95,19 +112,6 @@ cat gcstat.log | gcisual -s 1 -i 1000 -p B=Eden:6:5,B=S0:3:1,B=S1:4:2,B=Old:8:7,
 #### 输出图形
 
 同例子1
-
----
-
-## 源码修改注意事项
-
-1. 修改源码后，执行build.sh即可生成bash下的可执行文件gcisual
-
-2. build.sh原理为合并main.sh和graph下的sh脚本，再通过shc生成gcisual文件，其中，合并位置参照为如下代码，因此，如下代码不能改动：
-```shell
-for graphSct in ./graph/*.sh; do
-    source $graphSct
-done
-```
 
 ---
 
