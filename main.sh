@@ -5,7 +5,8 @@
 # author：strangeen
 # url: www.dinghuiye.online
 # github: github.com/strangeen
-# Licensed to the Apache
+# license: Apache License 2.0
+# version: v0.0.1
 # -----------------------------------------------------------------------------
 
 
