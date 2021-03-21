@@ -24,7 +24,7 @@ function paintB() {
     for ((i=0;i<$currPos;i++)); do
         b+='|'
     done
-    printf '%-100s| %s %s / %-11s\r\n' $b $1':' $2 $3
+    printf '%-'$dataBLen's| %s %s / %-11s\r\n' $b $1':' $2 $3
     unset b
     unset i
     unset leftNum

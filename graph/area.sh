@@ -6,10 +6,10 @@ dataALen=100
 # 高度
 graphAHt=8
 
-# 环形数组存放数据dataAN，容量为$1
+# 环形数组dataAN存放数据，容量为$2
 # 设置初始头下标startIdxA=0，即遍历数组的起始下标
 # 添加元素的下标为startIdxA
-# 添加元素后，头下标先向后移一位，即startIdxA=(startIdxA+1)%$1
+# 添加元素后，头下标向后移一位，即startIdxA=(startIdxA+1)%$1
 # 数组需要赋初值为0
 # $1-唯一编号，$2-数组长度
 function initA() {
@@ -47,7 +47,7 @@ function paintA() {
     # 移动头下标
     eval 'let startIdxA'$4'="($startIdxA'$4' + 1) % ${#dataA'$4'[@]}"'
     # 打印表头
-    printf '%-100s\r\n' $1
+    printf '%-'$dataALen's\r\n' $1
     # 打印数组数据
     for ((i=$graphAHt;i>=1;i--)); do 
         l=''
@@ -69,9 +69,9 @@ function paintA() {
             fi
         done
         if [ $i = $graphAHt ]; then 
-            printf '%-100s %s / %-11s\r\n' $l $2 $3
+            printf '%-'$dataALen's %s / %-11s\r\n' $l $2 $3
         else 
-            printf '%-100s\r\n' $l
+            printf '%-'$dataALen's\r\n' $l
         fi
     done
     unset len
