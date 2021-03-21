@@ -1,6 +1,6 @@
 # GCisual
 
-linux环境中的visualGC，jstat离线日志的图形工具linux下的jstat日志可视化工具
+linux版visualGC，jstat gc离线日志图形化展示工具
 
 ## 版本
 
