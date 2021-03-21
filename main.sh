@@ -30,7 +30,7 @@
 #
 #
 # 例子1：对jstat日志输出实时图形
-# jstat -gc pid 1000 | gcisual -p B=Eden:6:5,B=S0:3:1,B=S1:4:2,B=Old:8:7,B=Perm:10:9,A=Eden:6:5,A=S0:3:1,A=S1:4:2 -s 1
+# jstat -gc pid 1000 | gcisual -s 1 -p B=Eden:6:5,B=S0:3:1,B=S1:4:2,B=Old:8:7,B=Perm:10:9,A=Eden:6:5,A=S0:3:1,A=S1:4:2
 # 参数解释：
 #   jstat日志可以设置输出时间间隔，因此gcisual不需要输入-i参数
 #   -s输入1表示跳过日志第1行，也可以使用管道sed '1d'替代
@@ -72,7 +72,7 @@
 #
 # 例子2：对离线jstat日志输出图形
 # jstat -gc pid 1000 100 > gcstat.log # 输出jstat日志到文件
-# cat gcstat.log | gcisual -p B=Eden:6:5,B=S0:3:1,B=S1:4:2,B=Old:8:7,B=Perm:10:9,A=Eden:6:5,A=S0:3:1,A=S1:4:2 -s 1 -i 1000
+# cat gcstat.log | gcisual -s 1 -i 1000 -p B=Eden:6:5,B=S0:3:1,B=S1:4:2,B=Old:8:7,B=Perm:10:9,A=Eden:6:5,A=S0:3:1,A=S1:4:2
 # 参数解释：
 #   -i参数设置图形刷新时间间隔，模拟jstat命令输入日志
 # 输出图形：同例子1
@@ -118,11 +118,11 @@ function error1() {
 
 
 例子1：对jstat日志输出实时图形
-jstat -gc pid 1000 | gcisual -p B=Eden:6:5,B=S0:3:1,B=S1:4:2,B=Old:8:7,B=Perm:10:9,A=Eden:6:5,A=S0:3:1,A=S1:4:2 -s 1
+jstat -gc pid 1000 | gcisual -s 1 -p B=Eden:6:5,B=S0:3:1,B=S1:4:2,B=Old:8:7,B=Perm:10:9,A=Eden:6:5,A=S0:3:1,A=S1:4:2
 
 例子2：对离线jstat日志输出图形
 jstat -gc pid 1000 100 > gcstat.log # 输出jstat日志到文件
-cat gcstat.log | gcisual -p B=Eden:6:5,B=S0:3:1,B=S1:4:2,B=Old:8:7,B=Perm:10:9,A=Eden:6:5,A=S0:3:1,A=S1:4:2 -s 1 -i 1000
+cat gcstat.log | gcisual -s 1 -i 1000 -p B=Eden:6:5,B=S0:3:1,B=S1:4:2,B=Old:8:7,B=Perm:10:9,A=Eden:6:5,A=S0:3:1,A=S1:4:2
 "
     exit 1
 }
