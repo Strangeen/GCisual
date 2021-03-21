@@ -6,7 +6,22 @@ linux命令行版visualgc工具，jstat离线日志图形化展示工具
 
 v0.0.1
 
-## gcisual使用方法
+## Quick Start
+
+### 安装脚本
+
+```
+cd gcisual
+ln -sf `pwd`/main.sh /usr/bin/gcisual
+```
+
+### 执行测试数据
+
+```
+cat gcstat.log | gcisual -s 1 -i 1000 -p B=Eden:6:5,B=S0:3:1,B=S1:4:2,B=Old:8:7,B=Perm:10:9,A=Eden:6:5,A=S0:3:1,A=S1:4:2
+```
+
+## gcisual详细使用方法
 
 ### 环境要求
 
@@ -112,8 +127,6 @@ cat gcstat.log | gcisual -s 1 -i 1000 -p B=Eden:6:5,B=S0:3:1,B=S1:4:2,B=Old:8:7,
 #### 输出图形
 
 同例子1
-
----
 
 ## 图形引擎
 
