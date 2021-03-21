@@ -1,3 +1,11 @@
+# -----------------------------------------------------------------------------
+# version: v0.0.1
+# license: Apache License 2.0
+# author：strangeen
+# url: www.dinghuiye.online
+# github: github.com/strangeen
+# -----------------------------------------------------------------------------
+
 # 图形标识为B
 registGraph B
 
